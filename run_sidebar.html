@@ -1,0 +1,30 @@
+<h2 class="text-2xl font-bold mb-6">Screenshot to Code</h2>
+<div class="mb-4">
+  <button id="run-button" onclick="loadSection('run.html', 'run_sidebar.html', 'run-button')" class="menu-button w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2 active-btn">
+    运行
+  </button>
+  <button id="label-button" onclick="loadSection('label.html', 'label_sidebar.html', 'label-button')" class="menu-button w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    标注
+  </button>
+</div>
+<div class="mb-4">
+  <label class="block text-gray-700 text-sm font-bold mb-2" for="generating">
+    Generating:
+  </label>
+  <select id="generating" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+    <option>HTML + Tailwind</option>
+    <!-- Add more options if needed -->
+  </select>
+</div>
+<div class="mb-4">
+  <label class="block text-gray-700 text-sm font-bold mb-2" for="model">
+    AI Model:
+  </label>
+  <select id="model" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+    <option>GPT-4o ✨</option>
+    <!-- Add more options if needed -->
+  </select>
+</div>
+<a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+  Subscribe to get started
+</a>

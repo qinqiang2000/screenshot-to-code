@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screenshot to Code</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .hidden { display: none; }
+    .active-btn { background-color: #38a169; } /* 绿色 */
+  </style>
+  <script>
+    function loadSection(file, sidebarFile, activeButtonId) {
+      fetch(sidebarFile)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('sidebar-content').innerHTML = data;
+          updateActiveButton(activeButtonId);
+        });
+
+      fetch(file)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('main-content').innerHTML = data;
+        });
+    }
+
+    function updateActiveButton(activeButtonId) {
+      document.querySelectorAll('.menu-button').forEach(button => {
+        button.classList.remove('active-btn');
+      });
+      document.getElementById(activeButtonId).classList.add('active-btn');
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadSection('run.html', 'run_sidebar.html', 'run-button'); // 默认加载运行部分
+    });
+  </script>
+</head>
+<body class="bg-gray-100">
+
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/4 bg-white p-6 border-r border-gray-200" id="sidebar-content">
+      <!-- Sidebar content will be loaded here -->
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="flex-1 p-6">
+      <!-- Main content will be loaded here -->
+    </div>
+  </div>
+
+</body>
+</html>
